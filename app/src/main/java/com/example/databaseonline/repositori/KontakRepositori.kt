@@ -6,6 +6,7 @@ import com.example.databaseonline.service_api.KontakService
 interface KontakRepository {
     suspend fun deleteKontak(id: Int): Boolean
     suspend fun getKontak(): List<Kontak>
+    suspend fun insertKontak(kontak: Kontak): Boolean
 }
 
 class NetworkKontakRepository(
@@ -17,6 +18,14 @@ class NetworkKontakRepository(
         val response = kontakApiService.deleteKontak(id)
 
         // Mengembalikan nilai true jika penghapusan berhasil, false sebaliknya
+        return response.isSuccessful
+    }
+
+    override suspend fun insertKontak(kontak: Kontak): Boolean {
+        // Implementasi penambahan kontak melalui kontakApiService
+        val response = kontakApiService.insertKontak(kontak)
+
+        // Mengembalikan nilai true jika penambahan berhasil, false sebaliknya
         return response.isSuccessful
     }
 }

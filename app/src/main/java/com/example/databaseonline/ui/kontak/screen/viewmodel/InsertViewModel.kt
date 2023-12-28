@@ -3,6 +3,8 @@ package com.example.databaseonline.ui.kontak.screen.viewmodel
 import com.example.databaseonline.modeldata.Kontak
 
 
+
+
 data class InsertUiState(
     val insertUiEvent: InsertUiEvent = InsertUiEvent(),
 )
