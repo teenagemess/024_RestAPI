@@ -4,6 +4,7 @@ import com.example.databaseonline.modeldata.Kontak
 import com.example.databaseonline.service_api.KontakService
 
 interface KontakRepository {
+
     suspend fun getKontak(): List<Kontak>
 }
 
