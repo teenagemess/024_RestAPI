@@ -6,6 +6,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.databaseonline.KontakAplikation
 import com.example.databaseonline.ui.home.viewmodel.HomeViewModel
+import com.example.databaseonline.ui.kontak.screen.viewmodel.InsertViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
@@ -14,6 +15,9 @@ object PenyediaViewModel {
             HomeViewModel(apkikasiMars().container.kontakRepository)
         }
 
+        initializer {
+            InsertViewModel(apkikasiMars().container.kontakRepository)
+        }
     }
 }
 
